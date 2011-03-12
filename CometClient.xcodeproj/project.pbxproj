@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46568F99132C01AD004086EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F98132C01AD004086EE /* UIKit.framework */; };
+		46568F9B132C01AD004086EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9A132C01AD004086EE /* Foundation.framework */; };
+		46568F9D132C01AD004086EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9C132C01AD004086EE /* CoreGraphics.framework */; };
+		46568FA3132C01AD004086EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46568FA1132C01AD004086EE /* InfoPlist.strings */; };
+		46568FA6132C01AD004086EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FA5132C01AD004086EE /* main.m */; };
+		46568FA9132C01AD004086EE /* CometClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FA8132C01AD004086EE /* CometClientAppDelegate.m */; };
+		46568FAC132C01AD004086EE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FAA132C01AD004086EE /* MainWindow.xib */; };
+		46568FAF132C01AD004086EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FAE132C01AD004086EE /* MainViewController.m */; };
+		46568FB1132C01AD004086EE /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FB0132C01AD004086EE /* MainView.xib */; };
+		46568FB4132C01AD004086EE /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FB3132C01AD004086EE /* FlipsideViewController.m */; };
+		46568FB6132C01AD004086EE /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FB5132C01AD004086EE /* FlipsideView.xib */; };
+		46568FBD132C01AD004086EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F98132C01AD004086EE /* UIKit.framework */; };
+		46568FBE132C01AD004086EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9A132C01AD004086EE /* Foundation.framework */; };
+		46568FBF132C01AD004086EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9C132C01AD004086EE /* CoreGraphics.framework */; };
+		46568FC7132C01AD004086EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46568FC5132C01AD004086EE /* InfoPlist.strings */; };
+		46568FCA132C01AD004086EE /* CometClientTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 46568FC9132C01AD004086EE /* CometClientTests.h */; };
+		46568FCC132C01AD004086EE /* CometClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FCB132C01AD004086EE /* CometClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46568FC0132C01AD004086EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46568F8B132C01AC004086EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46568F93132C01AD004086EE;
+			remoteInfo = CometClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		46568F94132C01AD004086EE /* CometClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CometClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46568F98132C01AD004086EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		46568F9A132C01AD004086EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		46568F9C132C01AD004086EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		46568FA0132C01AD004086EE /* CometClient-Info.plist */ = {isa = PBXFileReference; path = "CometClient-Info.plist"; sourceTree = "<group>"; };
+		46568FA2132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		46568FA4132C01AD004086EE /* CometClient-Prefix.pch */ = {isa = PBXFileReference; path = "CometClient-Prefix.pch"; sourceTree = "<group>"; };
+		46568FA5132C01AD004086EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		46568FA7132C01AD004086EE /* CometClientAppDelegate.h */ = {isa = PBXFileReference; path = CometClientAppDelegate.h; sourceTree = "<group>"; };
+		46568FA8132C01AD004086EE /* CometClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CometClientAppDelegate.m; sourceTree = "<group>"; };
+		46568FAB132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		46568FAD132C01AD004086EE /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		46568FAE132C01AD004086EE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		46568FB0132C01AD004086EE /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		46568FB2132C01AD004086EE /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		46568FB3132C01AD004086EE /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		46568FB5132C01AD004086EE /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		46568FBC132C01AD004086EE /* CometClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CometClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46568FC4132C01AD004086EE /* CometClientTests-Info.plist */ = {isa = PBXFileReference; path = "CometClientTests-Info.plist"; sourceTree = "<group>"; };
+		46568FC6132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		46568FC8132C01AD004086EE /* CometClientTests-Prefix.pch */ = {isa = PBXFileReference; path = "CometClientTests-Prefix.pch"; sourceTree = "<group>"; };
+		46568FC9132C01AD004086EE /* CometClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CometClientTests.h; sourceTree = "<group>"; };
+		46568FCB132C01AD004086EE /* CometClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CometClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46568F91132C01AD004086EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568F99132C01AD004086EE /* UIKit.framework in Frameworks */,
+				46568F9B132C01AD004086EE /* Foundation.framework in Frameworks */,
+				46568F9D132C01AD004086EE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46568FB8132C01AD004086EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568FBD132C01AD004086EE /* UIKit.framework in Frameworks */,
+				46568FBE132C01AD004086EE /* Foundation.framework in Frameworks */,
+				46568FBF132C01AD004086EE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46568F89132C01AC004086EE = {
+			isa = PBXGroup;
+			children = (
+				46568F9E132C01AD004086EE /* CometClient */,
+				46568FC2132C01AD004086EE /* CometClientTests */,
+				46568F97132C01AD004086EE /* Frameworks */,
+				46568F95132C01AD004086EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46568F95132C01AD004086EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46568F94132C01AD004086EE /* CometClient.app */,
+				46568FBC132C01AD004086EE /* CometClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46568F97132C01AD004086EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46568F98132C01AD004086EE /* UIKit.framework */,
+				46568F9A132C01AD004086EE /* Foundation.framework */,
+				46568F9C132C01AD004086EE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46568F9E132C01AD004086EE /* CometClient */ = {
+			isa = PBXGroup;
+			children = (
+				46568FA7132C01AD004086EE /* CometClientAppDelegate.h */,
+				46568FA8132C01AD004086EE /* CometClientAppDelegate.m */,
+				46568FAA132C01AD004086EE /* MainWindow.xib */,
+				46568FAD132C01AD004086EE /* MainViewController.h */,
+				46568FAE132C01AD004086EE /* MainViewController.m */,
+				46568FB0132C01AD004086EE /* MainView.xib */,
+				46568FB2132C01AD004086EE /* FlipsideViewController.h */,
+				46568FB3132C01AD004086EE /* FlipsideViewController.m */,
+				46568FB5132C01AD004086EE /* FlipsideView.xib */,
+				46568F9F132C01AD004086EE /* Supporting Files */,
+			);
+			path = CometClient;
+			sourceTree = "<group>";
+		};
+		46568F9F132C01AD004086EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46568FA0132C01AD004086EE /* CometClient-Info.plist */,
+				46568FA1132C01AD004086EE /* InfoPlist.strings */,
+				46568FA4132C01AD004086EE /* CometClient-Prefix.pch */,
+				46568FA5132C01AD004086EE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46568FC2132C01AD004086EE /* CometClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				46568FC9132C01AD004086EE /* CometClientTests.h */,
+				46568FCB132C01AD004086EE /* CometClientTests.m */,
+				46568FC3132C01AD004086EE /* Supporting Files */,
+			);
+			path = CometClientTests;
+			sourceTree = "<group>";
+		};
+		46568FC3132C01AD004086EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46568FC4132C01AD004086EE /* CometClientTests-Info.plist */,
+				46568FC5132C01AD004086EE /* InfoPlist.strings */,
+				46568FC8132C01AD004086EE /* CometClientTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46568F93132C01AD004086EE /* CometClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46568FCF132C01AD004086EE /* Build configuration list for PBXNativeTarget "CometClient" */;
+			buildPhases = (
+				46568F90132C01AD004086EE /* Sources */,
+				46568F91132C01AD004086EE /* Frameworks */,
+				46568F92132C01AD004086EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CometClient;
+			productName = CometClient;
+			productReference = 46568F94132C01AD004086EE /* CometClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46568FBB132C01AD004086EE /* CometClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46568FD2132C01AD004086EE /* Build configuration list for PBXNativeTarget "CometClientTests" */;
+			buildPhases = (
+				46568FB7132C01AD004086EE /* Sources */,
+				46568FB8132C01AD004086EE /* Frameworks */,
+				46568FB9132C01AD004086EE /* Resources */,
+				46568FBA132C01AD004086EE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46568FC1132C01AD004086EE /* PBXTargetDependency */,
+			);
+			name = CometClientTests;
+			productName = CometClientTests;
+			productReference = 46568FBC132C01AD004086EE /* CometClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46568F8B132C01AC004086EE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 46568F8E132C01AC004086EE /* Build configuration list for PBXProject "CometClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 46568F89132C01AC004086EE;
+			productRefGroup = 46568F95132C01AD004086EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46568F93132C01AD004086EE /* CometClient */,
+				46568FBB132C01AD004086EE /* CometClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46568F92132C01AD004086EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568FA3132C01AD004086EE /* InfoPlist.strings in Resources */,
+				46568FAC132C01AD004086EE /* MainWindow.xib in Resources */,
+				46568FB1132C01AD004086EE /* MainView.xib in Resources */,
+				46568FB6132C01AD004086EE /* FlipsideView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46568FB9132C01AD004086EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568FC7132C01AD004086EE /* InfoPlist.strings in Resources */,
+				46568FCA132C01AD004086EE /* CometClientTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46568FBA132C01AD004086EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46568F90132C01AD004086EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568FA6132C01AD004086EE /* main.m in Sources */,
+				46568FA9132C01AD004086EE /* CometClientAppDelegate.m in Sources */,
+				46568FAF132C01AD004086EE /* MainViewController.m in Sources */,
+				46568FB4132C01AD004086EE /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46568FB7132C01AD004086EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46568FCC132C01AD004086EE /* CometClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46568FC1132C01AD004086EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46568F93132C01AD004086EE /* CometClient */;
+			targetProxy = 46568FC0132C01AD004086EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		46568FA1132C01AD004086EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46568FA2132C01AD004086EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		46568FAA132C01AD004086EE /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46568FAB132C01AD004086EE /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		46568FC5132C01AD004086EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46568FC6132C01AD004086EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46568FCD132C01AD004086EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		46568FCE132C01AD004086EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		46568FD0132C01AD004086EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CometClient/CometClient-Prefix.pch";
+				INFOPLIST_FILE = "CometClient/CometClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		46568FD1132C01AD004086EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CometClient/CometClient-Prefix.pch";
+				INFOPLIST_FILE = "CometClient/CometClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		46568FD3132C01AD004086EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CometClient.app/CometClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CometClientTests/CometClientTests-Prefix.pch";
+				INFOPLIST_FILE = "CometClientTests/CometClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		46568FD4132C01AD004086EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CometClient.app/CometClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CometClientTests/CometClientTests-Prefix.pch";
+				INFOPLIST_FILE = "CometClientTests/CometClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46568F8E132C01AC004086EE /* Build configuration list for PBXProject "CometClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46568FCD132C01AD004086EE /* Debug */,
+				46568FCE132C01AD004086EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46568FCF132C01AD004086EE /* Build configuration list for PBXNativeTarget "CometClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46568FD0132C01AD004086EE /* Debug */,
+				46568FD1132C01AD004086EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46568FD2132C01AD004086EE /* Build configuration list for PBXNativeTarget "CometClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46568FD3132C01AD004086EE /* Debug */,
+				46568FD4132C01AD004086EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46568F8B132C01AC004086EE /* Project object */;
+}
