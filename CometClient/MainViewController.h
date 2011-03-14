@@ -7,8 +7,9 @@
 //
 
 #import "FlipsideViewController.h"
+#import "DDCometClient.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, DDCometClientDelegate> {
 
 }
 

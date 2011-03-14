@@ -24,6 +24,33 @@
 		46568FC7132C01AD004086EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46568FC5132C01AD004086EE /* InfoPlist.strings */; };
 		46568FCA132C01AD004086EE /* CometClientTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 46568FC9132C01AD004086EE /* CometClientTests.h */; };
 		46568FCC132C01AD004086EE /* CometClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FCB132C01AD004086EE /* CometClientTests.m */; };
+		46568FE9132C027E004086EE /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FD8132C027E004086EE /* NSObject+JSON.m */; };
+		46568FEA132C027E004086EE /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FD8132C027E004086EE /* NSObject+JSON.m */; };
+		46568FEB132C027E004086EE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDA132C027E004086EE /* SBJsonParser.m */; };
+		46568FEC132C027E004086EE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDA132C027E004086EE /* SBJsonParser.m */; };
+		46568FED132C027E004086EE /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDC132C027E004086EE /* SBJsonStreamParser.m */; };
+		46568FEE132C027E004086EE /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDC132C027E004086EE /* SBJsonStreamParser.m */; };
+		46568FEF132C027E004086EE /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDE132C027E004086EE /* SBJsonStreamParserAdapter.m */; };
+		46568FF0132C027E004086EE /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FDE132C027E004086EE /* SBJsonStreamParserAdapter.m */; };
+		46568FF1132C027E004086EE /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE0132C027E004086EE /* SBJsonStreamParserState.m */; };
+		46568FF2132C027E004086EE /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE0132C027E004086EE /* SBJsonStreamParserState.m */; };
+		46568FF3132C027E004086EE /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE2132C027E004086EE /* SBJsonStreamWriter.m */; };
+		46568FF4132C027E004086EE /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE2132C027E004086EE /* SBJsonStreamWriter.m */; };
+		46568FF5132C027E004086EE /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE4132C027E004086EE /* SBJsonStreamWriterState.m */; };
+		46568FF6132C027E004086EE /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE4132C027E004086EE /* SBJsonStreamWriterState.m */; };
+		46568FF7132C027E004086EE /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE6132C027E004086EE /* SBJsonTokeniser.m */; };
+		46568FF8132C027E004086EE /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE6132C027E004086EE /* SBJsonTokeniser.m */; };
+		46568FF9132C027E004086EE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE8132C027E004086EE /* SBJsonWriter.m */; };
+		46568FFA132C027E004086EE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FE8132C027E004086EE /* SBJsonWriter.m */; };
+		46568FFE132C0500004086EE /* DDCometClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FFD132C0500004086EE /* DDCometClient.m */; };
+		46568FFF132C0500004086EE /* DDCometClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FFD132C0500004086EE /* DDCometClient.m */; };
+		46569002132C27BD004086EE /* DDCometMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569001132C27BD004086EE /* DDCometMessage.m */; };
+		46569003132C27BD004086EE /* DDCometMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569001132C27BD004086EE /* DDCometMessage.m */; };
+		4656900A132DA5FF004086EE /* DDCometSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569009132DA5FE004086EE /* DDCometSubscription.m */; };
+		4656900B132DA5FF004086EE /* DDCometSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569009132DA5FE004086EE /* DDCometSubscription.m */; };
+		4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
+		4656900F132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
+		46569017132DDDAF004086EE /* NSMutableArray+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569016132DDDAE004086EE /* NSMutableArray+Queue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,25 +68,55 @@
 		46568F98132C01AD004086EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46568F9A132C01AD004086EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		46568F9C132C01AD004086EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		46568FA0132C01AD004086EE /* CometClient-Info.plist */ = {isa = PBXFileReference; path = "CometClient-Info.plist"; sourceTree = "<group>"; };
+		46568FA0132C01AD004086EE /* CometClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CometClient-Info.plist"; sourceTree = "<group>"; };
 		46568FA2132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		46568FA4132C01AD004086EE /* CometClient-Prefix.pch */ = {isa = PBXFileReference; path = "CometClient-Prefix.pch"; sourceTree = "<group>"; };
+		46568FA4132C01AD004086EE /* CometClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CometClient-Prefix.pch"; sourceTree = "<group>"; };
 		46568FA5132C01AD004086EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		46568FA7132C01AD004086EE /* CometClientAppDelegate.h */ = {isa = PBXFileReference; path = CometClientAppDelegate.h; sourceTree = "<group>"; };
+		46568FA7132C01AD004086EE /* CometClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CometClientAppDelegate.h; sourceTree = "<group>"; };
 		46568FA8132C01AD004086EE /* CometClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CometClientAppDelegate.m; sourceTree = "<group>"; };
 		46568FAB132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		46568FAD132C01AD004086EE /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		46568FAD132C01AD004086EE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		46568FAE132C01AD004086EE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		46568FB0132C01AD004086EE /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		46568FB2132C01AD004086EE /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		46568FB2132C01AD004086EE /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		46568FB3132C01AD004086EE /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		46568FB5132C01AD004086EE /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		46568FBC132C01AD004086EE /* CometClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CometClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46568FC4132C01AD004086EE /* CometClientTests-Info.plist */ = {isa = PBXFileReference; path = "CometClientTests-Info.plist"; sourceTree = "<group>"; };
+		46568FC4132C01AD004086EE /* CometClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CometClientTests-Info.plist"; sourceTree = "<group>"; };
 		46568FC6132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		46568FC8132C01AD004086EE /* CometClientTests-Prefix.pch */ = {isa = PBXFileReference; path = "CometClientTests-Prefix.pch"; sourceTree = "<group>"; };
+		46568FC8132C01AD004086EE /* CometClientTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CometClientTests-Prefix.pch"; sourceTree = "<group>"; };
 		46568FC9132C01AD004086EE /* CometClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CometClientTests.h; sourceTree = "<group>"; };
 		46568FCB132C01AD004086EE /* CometClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CometClientTests.m; sourceTree = "<group>"; };
+		46568FD6132C027E004086EE /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "../json-framework/Classes/JSON.h"; sourceTree = "<group>"; };
+		46568FD7132C027E004086EE /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+JSON.h"; path = "../json-framework/Classes/NSObject+JSON.h"; sourceTree = "<group>"; };
+		46568FD8132C027E004086EE /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+JSON.m"; path = "../json-framework/Classes/NSObject+JSON.m"; sourceTree = "<group>"; };
+		46568FD9132C027E004086EE /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "../json-framework/Classes/SBJsonParser.h"; sourceTree = "<group>"; };
+		46568FDA132C027E004086EE /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = "../json-framework/Classes/SBJsonParser.m"; sourceTree = "<group>"; };
+		46568FDB132C027E004086EE /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = "../json-framework/Classes/SBJsonStreamParser.h"; sourceTree = "<group>"; };
+		46568FDC132C027E004086EE /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = "../json-framework/Classes/SBJsonStreamParser.m"; sourceTree = "<group>"; };
+		46568FDD132C027E004086EE /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = "../json-framework/Classes/SBJsonStreamParserAdapter.h"; sourceTree = "<group>"; };
+		46568FDE132C027E004086EE /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = "../json-framework/Classes/SBJsonStreamParserAdapter.m"; sourceTree = "<group>"; };
+		46568FDF132C027E004086EE /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = "../json-framework/Classes/SBJsonStreamParserState.h"; sourceTree = "<group>"; };
+		46568FE0132C027E004086EE /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = "../json-framework/Classes/SBJsonStreamParserState.m"; sourceTree = "<group>"; };
+		46568FE1132C027E004086EE /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = "../json-framework/Classes/SBJsonStreamWriter.h"; sourceTree = "<group>"; };
+		46568FE2132C027E004086EE /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriter.m; path = "../json-framework/Classes/SBJsonStreamWriter.m"; sourceTree = "<group>"; };
+		46568FE3132C027E004086EE /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = "../json-framework/Classes/SBJsonStreamWriterState.h"; sourceTree = "<group>"; };
+		46568FE4132C027E004086EE /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterState.m; path = "../json-framework/Classes/SBJsonStreamWriterState.m"; sourceTree = "<group>"; };
+		46568FE5132C027E004086EE /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = "../json-framework/Classes/SBJsonTokeniser.h"; sourceTree = "<group>"; };
+		46568FE6132C027E004086EE /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = "../json-framework/Classes/SBJsonTokeniser.m"; sourceTree = "<group>"; };
+		46568FE7132C027E004086EE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../json-framework/Classes/SBJsonWriter.h"; sourceTree = "<group>"; };
+		46568FE8132C027E004086EE /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = "../json-framework/Classes/SBJsonWriter.m"; sourceTree = "<group>"; };
+		46568FFC132C0500004086EE /* DDCometClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometClient.h; path = DDComet/DDCometClient.h; sourceTree = "<group>"; };
+		46568FFD132C0500004086EE /* DDCometClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometClient.m; path = DDComet/DDCometClient.m; sourceTree = "<group>"; };
+		46569000132C27BD004086EE /* DDCometMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometMessage.h; path = DDComet/DDCometMessage.h; sourceTree = "<group>"; };
+		46569001132C27BD004086EE /* DDCometMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometMessage.m; path = DDComet/DDCometMessage.m; sourceTree = "<group>"; };
+		46569008132DA5FE004086EE /* DDCometSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometSubscription.h; path = DDComet/DDCometSubscription.h; sourceTree = "<group>"; };
+		46569009132DA5FE004086EE /* DDCometSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometSubscription.m; path = DDComet/DDCometSubscription.m; sourceTree = "<group>"; };
+		4656900C132DD5A5004086EE /* DDCometClientOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometClientOperation.h; path = DDComet/DDCometClientOperation.h; sourceTree = "<group>"; };
+		4656900D132DD5A5004086EE /* DDCometClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometClientOperation.m; path = DDComet/DDCometClientOperation.m; sourceTree = "<group>"; };
+		46569010132DDD17004086EE /* DDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDQueue.h; path = DDComet/DDQueue.h; sourceTree = "<group>"; };
+		46569015132DDDAE004086EE /* NSMutableArray+Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Queue.h"; path = "DDComet/NSMutableArray+Queue.h"; sourceTree = "<group>"; };
+		46569016132DDDAE004086EE /* NSMutableArray+Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Queue.m"; path = "DDComet/NSMutableArray+Queue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +146,8 @@
 		46568F89132C01AC004086EE = {
 			isa = PBXGroup;
 			children = (
+				46568FFB132C030B004086EE /* DDComet */,
+				46568FD5132C025A004086EE /* SBJSON */,
 				46568F9E132C01AD004086EE /* CometClient */,
 				46568FC2132C01AD004086EE /* CometClientTests */,
 				46568F97132C01AD004086EE /* Frameworks */,
@@ -161,6 +220,50 @@
 				46568FC8132C01AD004086EE /* CometClientTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46568FD5132C025A004086EE /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				46568FD6132C027E004086EE /* JSON.h */,
+				46568FD7132C027E004086EE /* NSObject+JSON.h */,
+				46568FD8132C027E004086EE /* NSObject+JSON.m */,
+				46568FD9132C027E004086EE /* SBJsonParser.h */,
+				46568FDA132C027E004086EE /* SBJsonParser.m */,
+				46568FDB132C027E004086EE /* SBJsonStreamParser.h */,
+				46568FDC132C027E004086EE /* SBJsonStreamParser.m */,
+				46568FDD132C027E004086EE /* SBJsonStreamParserAdapter.h */,
+				46568FDE132C027E004086EE /* SBJsonStreamParserAdapter.m */,
+				46568FDF132C027E004086EE /* SBJsonStreamParserState.h */,
+				46568FE0132C027E004086EE /* SBJsonStreamParserState.m */,
+				46568FE1132C027E004086EE /* SBJsonStreamWriter.h */,
+				46568FE2132C027E004086EE /* SBJsonStreamWriter.m */,
+				46568FE3132C027E004086EE /* SBJsonStreamWriterState.h */,
+				46568FE4132C027E004086EE /* SBJsonStreamWriterState.m */,
+				46568FE5132C027E004086EE /* SBJsonTokeniser.h */,
+				46568FE6132C027E004086EE /* SBJsonTokeniser.m */,
+				46568FE7132C027E004086EE /* SBJsonWriter.h */,
+				46568FE8132C027E004086EE /* SBJsonWriter.m */,
+			);
+			name = SBJSON;
+			sourceTree = "<group>";
+		};
+		46568FFB132C030B004086EE /* DDComet */ = {
+			isa = PBXGroup;
+			children = (
+				46568FFC132C0500004086EE /* DDCometClient.h */,
+				46568FFD132C0500004086EE /* DDCometClient.m */,
+				4656900C132DD5A5004086EE /* DDCometClientOperation.h */,
+				4656900D132DD5A5004086EE /* DDCometClientOperation.m */,
+				46569000132C27BD004086EE /* DDCometMessage.h */,
+				46569001132C27BD004086EE /* DDCometMessage.m */,
+				46569008132DA5FE004086EE /* DDCometSubscription.h */,
+				46569009132DA5FE004086EE /* DDCometSubscription.m */,
+				46569010132DDD17004086EE /* DDQueue.h */,
+				46569015132DDDAE004086EE /* NSMutableArray+Queue.h */,
+				46569016132DDDAE004086EE /* NSMutableArray+Queue.m */,
+			);
+			name = DDComet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +376,20 @@
 				46568FA9132C01AD004086EE /* CometClientAppDelegate.m in Sources */,
 				46568FAF132C01AD004086EE /* MainViewController.m in Sources */,
 				46568FB4132C01AD004086EE /* FlipsideViewController.m in Sources */,
+				46568FE9132C027E004086EE /* NSObject+JSON.m in Sources */,
+				46568FEB132C027E004086EE /* SBJsonParser.m in Sources */,
+				46568FED132C027E004086EE /* SBJsonStreamParser.m in Sources */,
+				46568FEF132C027E004086EE /* SBJsonStreamParserAdapter.m in Sources */,
+				46568FF1132C027E004086EE /* SBJsonStreamParserState.m in Sources */,
+				46568FF3132C027E004086EE /* SBJsonStreamWriter.m in Sources */,
+				46568FF5132C027E004086EE /* SBJsonStreamWriterState.m in Sources */,
+				46568FF7132C027E004086EE /* SBJsonTokeniser.m in Sources */,
+				46568FF9132C027E004086EE /* SBJsonWriter.m in Sources */,
+				46568FFE132C0500004086EE /* DDCometClient.m in Sources */,
+				46569002132C27BD004086EE /* DDCometMessage.m in Sources */,
+				4656900A132DA5FF004086EE /* DDCometSubscription.m in Sources */,
+				4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */,
+				46569017132DDDAF004086EE /* NSMutableArray+Queue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +398,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				46568FCC132C01AD004086EE /* CometClientTests.m in Sources */,
+				46568FEA132C027E004086EE /* NSObject+JSON.m in Sources */,
+				46568FEC132C027E004086EE /* SBJsonParser.m in Sources */,
+				46568FEE132C027E004086EE /* SBJsonStreamParser.m in Sources */,
+				46568FF0132C027E004086EE /* SBJsonStreamParserAdapter.m in Sources */,
+				46568FF2132C027E004086EE /* SBJsonStreamParserState.m in Sources */,
+				46568FF4132C027E004086EE /* SBJsonStreamWriter.m in Sources */,
+				46568FF6132C027E004086EE /* SBJsonStreamWriterState.m in Sources */,
+				46568FF8132C027E004086EE /* SBJsonTokeniser.m in Sources */,
+				46568FFA132C027E004086EE /* SBJsonWriter.m in Sources */,
+				46568FFF132C0500004086EE /* DDCometClient.m in Sources */,
+				46569003132C27BD004086EE /* DDCometMessage.m in Sources */,
+				4656900B132DA5FF004086EE /* DDCometSubscription.m in Sources */,
+				4656900F132DD5A6004086EE /* DDCometClientOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +493,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CometClient/CometClient-Prefix.pch";
 				INFOPLIST_FILE = "CometClient/CometClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CometClient/CometClient-Prefix.pch";
 				INFOPLIST_FILE = "CometClient/CometClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

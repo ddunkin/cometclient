@@ -7,16 +7,51 @@
 //
 
 #import "MainViewController.h"
+#import "DDCometClient.h"
+#import "DDCometMessage.h"
+
 
 @implementation MainViewController
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	DDCometClient *client = [[DDCometClient alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/cometd"]];
+	client.delegate = self;
+	[client handshake:NULL];
 }
-*/
+
+- (void)cometClientHandshakeDidSucceed:(DDCometClient *)client
+{
+	NSLog(@"Handshake succeeded");
+	[client subscribeToChannel:@"/chat/demo" target:self selector:@selector(chatMessageReceived:) error:NULL];
+	[client subscribeToChannel:@"/members/demo" target:self selector:@selector(membershipMessageReceived:) error:NULL];
+}
+
+- (void)cometClient:(DDCometClient *)client handshakeDidFailWithError:(NSError *)error
+{
+	NSLog(@"Handshake failed");
+}
+
+- (void)cometClient:(DDCometClient *)client subscriptionDidSucceed:(DDCometSubscription *)subscription
+{
+	NSLog(@"Subsription succeeded");
+}
+
+- (void)cometClient:(DDCometClient *)client subscription:(DDCometSubscription *)subscription didFailWithError:(NSError *)error
+{
+	NSLog(@"Subsription failed");
+}
+
+- (void)chatMessageReceived:(DDCometMessage *)message
+{
+	NSLog(@"%@: %@", [message.data objectForKey:@"user"], [message.data objectForKey:@"chat"]);
+}
+
+- (void)membershipMessageReceived:(DDCometMessage *)message
+{
+}
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
