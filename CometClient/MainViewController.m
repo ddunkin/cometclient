@@ -19,6 +19,7 @@
     [super viewDidLoad];
 	DDCometClient *client = [[DDCometClient alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/cometd"]];
 	client.delegate = self;
+	[client scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 	[client handshake:NULL];
 }
 

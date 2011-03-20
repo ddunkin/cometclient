@@ -5,6 +5,7 @@
 @class DDCometClientOperation;
 @class DDCometMessage;
 @class DDCometSubscription;
+@class DDQueueProcessor;
 @protocol DDCometClientDelegate;
 @protocol DDQueue;
 
@@ -24,6 +25,7 @@ typedef enum {
 	id<DDQueue> m_outgoingQueue;
 	id<DDQueue> m_incomingQueue;
 	NSOperationQueue *m_communicationOperationQueue;
+	DDQueueProcessor *m_incomingProcessor;
 }
 
 @property (nonatomic, readonly) NSString *clientID;
@@ -31,6 +33,7 @@ typedef enum {
 @property (nonatomic, assign) id<DDCometClientDelegate> delegate;
 
 - (id)initWithURL:(NSURL *)endpointURL;
+- (void)scheduleInRunLoop:(NSRunLoop *)runLoop forMode:(NSString *)mode;
 - (BOOL)handshake:(NSError **)error;
 - (BOOL)connect:(NSError **)error;
 - (void)disconnect;

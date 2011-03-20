@@ -4,7 +4,8 @@
 #import "DDCometClientOperation.h"
 #import "DDCometMessage.h"
 #import "DDCometSubscription.h"
-#import "NSMutableArray+Queue.h"
+#import "DDConcurrentQueue.h"
+#import "DDQueueProcessor.h"
 
 
 @interface DDCometClient ()
@@ -28,11 +29,10 @@
 		m_endpointURL = [endpointURL retain];
 		m_pendingSubscriptions = [[NSMutableDictionary alloc] init];
 		m_subscriptions = [[NSMutableArray alloc] init];
-		m_outgoingQueue = [[NSMutableArray alloc] init];
-		m_incomingQueue = [[NSMutableArray alloc] init];
+		m_outgoingQueue = [[DDConcurrentQueue alloc] init];
+		m_incomingQueue = [[DDConcurrentQueue alloc] init];
 		m_communicationOperationQueue = [[NSOperationQueue alloc] init];
 		[m_communicationOperationQueue setMaxConcurrentOperationCount:1];
-		[self performSelectorInBackground:@selector(processIncomingMessages) withObject:nil];
 	}
 	return self;
 }
@@ -46,7 +46,15 @@
 	[m_pendingSubscriptions release];
 	[m_endpointURL release];
 	[m_clientID release];
+	[m_incomingProcessor release];
 	[super dealloc];
+}
+
+- (void)scheduleInRunLoop:(NSRunLoop *)runLoop forMode:(NSString *)mode
+{
+	m_incomingProcessor = [[DDQueueProcessor alloc] initWithTarget:self selector:@selector(processIncomingMessages)];
+	[m_incomingQueue setDelegate:m_incomingProcessor];
+	[m_incomingProcessor scheduleInRunLoop:runLoop forMode:mode];
 }
 
 - (BOOL)handshake:(NSError **)error
@@ -193,16 +201,8 @@
 
 - (void)processIncomingMessages
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	while (YES)
-	{
-		DDCometMessage *message;
-		while ((message = [m_incomingQueue removeObject]))
-			[self handleMessage:message];
-		[NSThread sleepForTimeInterval:0.1];
-	}
-	
-	[pool release];
+	DDCometMessage *message;
+	while ((message = [m_incomingQueue removeObject]))
+		[self handleMessage:message];
 }
 @end

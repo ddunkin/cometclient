@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460048951335BCDB0015DB79 /* DDQueueProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 460048941335BCC80015DB79 /* DDQueueProcessor.m */; };
+		461CD433132F368F00A6BE4F /* DDArrayQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 461CD432132F368F00A6BE4F /* DDArrayQueue.m */; };
+		461CD4741333136B00A6BE4F /* DDConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 461CD4731333136B00A6BE4F /* DDConcurrentQueue.m */; };
 		46568F99132C01AD004086EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F98132C01AD004086EE /* UIKit.framework */; };
 		46568F9B132C01AD004086EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9A132C01AD004086EE /* Foundation.framework */; };
 		46568F9D132C01AD004086EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9C132C01AD004086EE /* CoreGraphics.framework */; };
@@ -50,7 +53,6 @@
 		4656900B132DA5FF004086EE /* DDCometSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569009132DA5FE004086EE /* DDCometSubscription.m */; };
 		4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
 		4656900F132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
-		46569017132DDDAF004086EE /* NSMutableArray+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569016132DDDAE004086EE /* NSMutableArray+Queue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460048931335BCC60015DB79 /* DDQueueProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDQueueProcessor.h; path = DDComet/DDQueueProcessor.h; sourceTree = "<group>"; };
+		460048941335BCC80015DB79 /* DDQueueProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDQueueProcessor.m; path = DDComet/DDQueueProcessor.m; sourceTree = "<group>"; };
+		461CD431132F368F00A6BE4F /* DDArrayQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDArrayQueue.h; path = DDComet/DDArrayQueue.h; sourceTree = "<group>"; };
+		461CD432132F368F00A6BE4F /* DDArrayQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDArrayQueue.m; path = DDComet/DDArrayQueue.m; sourceTree = "<group>"; };
+		461CD4721333136B00A6BE4F /* DDConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDConcurrentQueue.h; path = DDComet/DDConcurrentQueue.h; sourceTree = "<group>"; };
+		461CD4731333136B00A6BE4F /* DDConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDConcurrentQueue.m; path = DDComet/DDConcurrentQueue.m; sourceTree = "<group>"; };
 		46568F94132C01AD004086EE /* CometClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CometClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46568F98132C01AD004086EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46568F9A132C01AD004086EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,8 +123,6 @@
 		4656900C132DD5A5004086EE /* DDCometClientOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometClientOperation.h; path = DDComet/DDCometClientOperation.h; sourceTree = "<group>"; };
 		4656900D132DD5A5004086EE /* DDCometClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometClientOperation.m; path = DDComet/DDCometClientOperation.m; sourceTree = "<group>"; };
 		46569010132DDD17004086EE /* DDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDQueue.h; path = DDComet/DDQueue.h; sourceTree = "<group>"; };
-		46569015132DDDAE004086EE /* NSMutableArray+Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Queue.h"; path = "DDComet/NSMutableArray+Queue.h"; sourceTree = "<group>"; };
-		46569016132DDDAE004086EE /* NSMutableArray+Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Queue.m"; path = "DDComet/NSMutableArray+Queue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +257,8 @@
 		46568FFB132C030B004086EE /* DDComet */ = {
 			isa = PBXGroup;
 			children = (
+				461CD431132F368F00A6BE4F /* DDArrayQueue.h */,
+				461CD432132F368F00A6BE4F /* DDArrayQueue.m */,
 				46568FFC132C0500004086EE /* DDCometClient.h */,
 				46568FFD132C0500004086EE /* DDCometClient.m */,
 				4656900C132DD5A5004086EE /* DDCometClientOperation.h */,
@@ -259,9 +267,11 @@
 				46569001132C27BD004086EE /* DDCometMessage.m */,
 				46569008132DA5FE004086EE /* DDCometSubscription.h */,
 				46569009132DA5FE004086EE /* DDCometSubscription.m */,
+				461CD4721333136B00A6BE4F /* DDConcurrentQueue.h */,
+				461CD4731333136B00A6BE4F /* DDConcurrentQueue.m */,
 				46569010132DDD17004086EE /* DDQueue.h */,
-				46569015132DDDAE004086EE /* NSMutableArray+Queue.h */,
-				46569016132DDDAE004086EE /* NSMutableArray+Queue.m */,
+				460048931335BCC60015DB79 /* DDQueueProcessor.h */,
+				460048941335BCC80015DB79 /* DDQueueProcessor.m */,
 			);
 			name = DDComet;
 			sourceTree = "<group>";
@@ -389,7 +399,9 @@
 				46569002132C27BD004086EE /* DDCometMessage.m in Sources */,
 				4656900A132DA5FF004086EE /* DDCometSubscription.m in Sources */,
 				4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */,
-				46569017132DDDAF004086EE /* NSMutableArray+Queue.m in Sources */,
+				461CD433132F368F00A6BE4F /* DDArrayQueue.m in Sources */,
+				461CD4741333136B00A6BE4F /* DDConcurrentQueue.m in Sources */,
+				460048951335BCDB0015DB79 /* DDQueueProcessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +589,7 @@
 				46568FD1132C01AD004086EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46568FD2132C01AD004086EE /* Build configuration list for PBXNativeTarget "CometClientTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +598,7 @@
 				46568FD4132C01AD004086EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
