@@ -19,8 +19,6 @@
 		46568FAC132C01AD004086EE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FAA132C01AD004086EE /* MainWindow.xib */; };
 		46568FAF132C01AD004086EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FAE132C01AD004086EE /* MainViewController.m */; };
 		46568FB1132C01AD004086EE /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FB0132C01AD004086EE /* MainView.xib */; };
-		46568FB4132C01AD004086EE /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46568FB3132C01AD004086EE /* FlipsideViewController.m */; };
-		46568FB6132C01AD004086EE /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46568FB5132C01AD004086EE /* FlipsideView.xib */; };
 		46568FBD132C01AD004086EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F98132C01AD004086EE /* UIKit.framework */; };
 		46568FBE132C01AD004086EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9A132C01AD004086EE /* Foundation.framework */; };
 		46568FBF132C01AD004086EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46568F9C132C01AD004086EE /* CoreGraphics.framework */; };
@@ -86,9 +84,6 @@
 		46568FAD132C01AD004086EE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		46568FAE132C01AD004086EE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		46568FB0132C01AD004086EE /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		46568FB2132C01AD004086EE /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
-		46568FB3132C01AD004086EE /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
-		46568FB5132C01AD004086EE /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		46568FBC132C01AD004086EE /* CometClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CometClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46568FC4132C01AD004086EE /* CometClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CometClientTests-Info.plist"; sourceTree = "<group>"; };
 		46568FC6132C01AD004086EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -189,9 +184,6 @@
 				46568FAD132C01AD004086EE /* MainViewController.h */,
 				46568FAE132C01AD004086EE /* MainViewController.m */,
 				46568FB0132C01AD004086EE /* MainView.xib */,
-				46568FB2132C01AD004086EE /* FlipsideViewController.h */,
-				46568FB3132C01AD004086EE /* FlipsideViewController.m */,
-				46568FB5132C01AD004086EE /* FlipsideView.xib */,
 				46568F9F132C01AD004086EE /* Supporting Files */,
 			);
 			path = CometClient;
@@ -346,7 +338,6 @@
 				46568FA3132C01AD004086EE /* InfoPlist.strings in Resources */,
 				46568FAC132C01AD004086EE /* MainWindow.xib in Resources */,
 				46568FB1132C01AD004086EE /* MainView.xib in Resources */,
-				46568FB6132C01AD004086EE /* FlipsideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +376,6 @@
 				46568FA6132C01AD004086EE /* main.m in Sources */,
 				46568FA9132C01AD004086EE /* CometClientAppDelegate.m in Sources */,
 				46568FAF132C01AD004086EE /* MainViewController.m in Sources */,
-				46568FB4132C01AD004086EE /* FlipsideViewController.m in Sources */,
 				46568FE9132C027E004086EE /* NSObject+JSON.m in Sources */,
 				46568FEB132C027E004086EE /* SBJsonParser.m in Sources */,
 				46568FED132C027E004086EE /* SBJsonStreamParser.m in Sources */,

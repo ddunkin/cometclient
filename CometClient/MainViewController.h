@@ -1,19 +1,17 @@
-//
-//  MainViewController.h
-//  CometClient
-//
-//  Created by Dave Dunkin on 3/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
 
-#import "FlipsideViewController.h"
 #import "DDCometClient.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, DDCometClientDelegate> {
-
+@interface MainViewController : UIViewController <DDCometClientDelegate>
+{
+@private
+	DDCometClient *m_client;
+	UITextView *m_textView;
+	UITextField *m_textField;
 }
 
+@property (nonatomic, assign) IBOutlet UITextView *textView;
+@property (nonatomic, assign) IBOutlet UITextField *textField;
 
-- (IBAction)showInfo:(id)sender;
+- (IBAction)sendMessage:(id)sender;
 
 @end

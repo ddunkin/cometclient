@@ -1,10 +1,3 @@
-//
-//  MainViewController.m
-//  CometClient
-//
-//  Created by Dave Dunkin on 3/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
 
 #import "MainViewController.h"
 #import "DDCometClient.h"
@@ -13,26 +6,73 @@
 
 @implementation MainViewController
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+@synthesize textView = m_textView,
+	textField = m_textField;
+
+- (void)dealloc
+{
+	[m_client release];
+	[super dealloc];
+}
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	DDCometClient *client = [[DDCometClient alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/cometd"]];
-	client.delegate = self;
-	[client scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-	[client handshake:NULL];
+	if (m_client == nil)
+	{
+		m_client = [[DDCometClient alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/cometd"]];
+		m_client.delegate = self;
+		[m_client scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+		[m_client handshake:NULL];
+	}
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[m_textField becomeFirstResponder];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+#pragma mark -
+
+- (IBAction)sendMessage:(id)sender
+{
+	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:m_textField.text, @"chat", @"iPhone user", @"user", nil];
+	[m_client publishData:data toChannel:@"/chat/demo" error:NULL];
+	
+	m_textField.text = @"";
+}
+
+- (void)appendText:(NSString *)text
+{
+	m_textView.text = [m_textView.text stringByAppendingFormat:@"%@\n", text];
+}
+
+#pragma mark -
 
 - (void)cometClientHandshakeDidSucceed:(DDCometClient *)client
 {
 	NSLog(@"Handshake succeeded");
+	[self appendText:@"[connected]"];
+	
 	[client subscribeToChannel:@"/chat/demo" target:self selector:@selector(chatMessageReceived:) error:NULL];
 	[client subscribeToChannel:@"/members/demo" target:self selector:@selector(membershipMessageReceived:) error:NULL];
+	
+	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:@"/chat/demo", @"room", @"iPhone user", @"user", nil];
+	[m_client publishData:data toChannel:@"/service/members" error:NULL];
 }
 
 - (void)cometClient:(DDCometClient *)client handshakeDidFailWithError:(NSError *)error
 {
 	NSLog(@"Handshake failed");
+}
+
+- (void)cometClient:(DDCometClient *)client connectDidFailWithError:(NSError *)error
+{
+	NSLog(@"Connect failed");
 }
 
 - (void)cometClient:(DDCometClient *)client subscriptionDidSucceed:(DDCometSubscription *)subscription
@@ -47,54 +87,18 @@
 
 - (void)chatMessageReceived:(DDCometMessage *)message
 {
-	NSLog(@"%@: %@", [message.data objectForKey:@"user"], [message.data objectForKey:@"chat"]);
+	if (message.successful == nil)
+		[self appendText:[NSString stringWithFormat:@"%@: %@", [message.data objectForKey:@"user"], [message.data objectForKey:@"chat"]]];
+	else if (![message.successful boolValue])
+		[self appendText:@"Unable to send message"];
 }
 
 - (void)membershipMessageReceived:(DDCometMessage *)message
 {
-}
-
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
-{
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-- (IBAction)showInfo:(id)sender
-{    
-    FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
-    controller.delegate = self;
-    
-    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentModalViewController:controller animated:YES];
-    
-    [controller release];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
+	if ([message.data isKindOfClass:[NSDictionary class]])
+		[self appendText:[NSString stringWithFormat:@"[%@ joined]", [message.data objectForKey:@"user"]]];
+	if ([message.data isKindOfClass:[NSArray class]])
+		[self appendText:[NSString stringWithFormat:@"[%@ joined]", [message.data componentsJoinedByString:@", "]]];
 }
 
 @end
