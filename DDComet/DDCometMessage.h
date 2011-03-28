@@ -2,8 +2,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DDCometMessage : NSObject {
-}
+@interface DDCometMessage : NSObject
 
 @property (nonatomic, retain) NSString *channel;
 @property (nonatomic, retain) NSString *version;

@@ -2,8 +2,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DDCometSubscription : NSObject {
-}
+@interface DDCometSubscription : NSObject
 
 @property (nonatomic, readonly) NSString *channel;
 @property (nonatomic, readonly) id target;

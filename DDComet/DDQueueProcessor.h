@@ -3,7 +3,9 @@
 #import "DDQueue.h"
 
 
-@interface DDQueueProcessor : NSObject <DDQueueDelegate> {
+@interface DDQueueProcessor : NSObject <DDQueueDelegate>
+{
+@private
 	id m_target;
 	SEL m_selector;
 	CFRunLoopSourceRef m_source;
