@@ -38,12 +38,13 @@
 
 #pragma mark -
 
-- (IBAction)sendMessage:(id)sender
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:m_textField.text, @"chat", @"iPhone user", @"user", nil];
 	[m_client publishData:data toChannel:@"/chat/demo" error:NULL];
 	
 	m_textField.text = @"";
+	return YES;
 }
 
 - (void)appendText:(NSString *)text
@@ -96,9 +97,9 @@
 - (void)membershipMessageReceived:(DDCometMessage *)message
 {
 	if ([message.data isKindOfClass:[NSDictionary class]])
-		[self appendText:[NSString stringWithFormat:@"[%@ joined]", [message.data objectForKey:@"user"]]];
+		[self appendText:[NSString stringWithFormat:@"[%@ are in the chat]", [message.data objectForKey:@"user"]]];
 	if ([message.data isKindOfClass:[NSArray class]])
-		[self appendText:[NSString stringWithFormat:@"[%@ joined]", [message.data componentsJoinedByString:@", "]]];
+		[self appendText:[NSString stringWithFormat:@"[%@ are in the chat]", [message.data componentsJoinedByString:@", "]]];
 }
 
 @end
