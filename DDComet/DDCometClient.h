@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class DDCometClientOperation;
+@class DDCometLongPollingTransport;
 @class DDCometMessage;
 @class DDCometSubscription;
 @class DDQueueProcessor;
@@ -27,13 +27,14 @@ typedef enum
 	NSDictionary *m_advice;
 	id<DDQueue> m_outgoingQueue;
 	id<DDQueue> m_incomingQueue;
-	NSOperationQueue *m_communicationOperationQueue;
+	DDCometLongPollingTransport *m_transport;
 	DDQueueProcessor *m_incomingProcessor;
 }
 
 @property (nonatomic, readonly) NSString *clientID;
 @property (nonatomic, readonly) NSURL *endpointURL;
 @property (nonatomic, readonly) DDCometState state;
+@property (nonatomic, readonly) NSDictionary *advice;
 @property (nonatomic, assign) id<DDCometClientDelegate> delegate;
 
 - (id)initWithURL:(NSURL *)endpointURL;
@@ -50,7 +51,6 @@ typedef enum
 
 - (id<DDQueue>)outgoingQueue;
 - (id<DDQueue>)incomingQueue;
-- (void)operationDidFinish:(DDCometClientOperation *)operation;
 
 @end
 

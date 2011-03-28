@@ -1,7 +1,7 @@
 
 #import "DDCometClient.h"
 #import <libkern/OSAtomic.h>
-#import "DDCometClientOperation.h"
+#import "DDCometLongPollingTransport.h"
 #import "DDCometMessage.h"
 #import "DDCometSubscription.h"
 #import "DDConcurrentQueue.h"
@@ -21,6 +21,7 @@
 @synthesize clientID = m_clientID,
 	endpointURL = m_endpointURL,
 	state = m_state,
+	advice = m_advice,
 	delegate = m_delegate;
 
 - (id)initWithURL:(NSURL *)endpointURL
@@ -32,15 +33,13 @@
 		m_subscriptions = [[NSMutableArray alloc] init];
 		m_outgoingQueue = [[DDConcurrentQueue alloc] init];
 		m_incomingQueue = [[DDConcurrentQueue alloc] init];
-		m_communicationOperationQueue = [[NSOperationQueue alloc] init];
-		[m_communicationOperationQueue setMaxConcurrentOperationCount:1];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[m_communicationOperationQueue release];
+	[m_transport release];
 	[m_incomingQueue release];
 	[m_outgoingQueue release];
 	[m_subscriptions release];
@@ -73,8 +72,10 @@
 
 - (void)disconnect
 {
-	[m_communicationOperationQueue cancelAllOperations];
 	m_state = DDCometStateDisconnected;
+	[m_transport cancel];
+	[m_transport release];
+	m_transport = nil;
 }
 
 - (DDCometMessage *)subscribeToChannel:(NSString *)channel target:(id)target selector:(SEL)selector error:(NSError **)error
@@ -133,12 +134,6 @@
 	return m_incomingQueue;
 }
 
-- (void)operationDidFinish:(DDCometClientOperation *)operation
-{
-//	if (m_state != DDCometStateDisconnected)
-//		[m_communicationOperationQueue addOperation:[[[DDCometClientOperation alloc] initWithClient:self] autorelease]];
-}
-
 #pragma mark -
 
 - (NSString *)nextMessageID
@@ -154,12 +149,10 @@
 	NSLog(@"Sending message: %@", message);
 	[m_outgoingQueue addObject:message];
 	
-	if ([m_communicationOperationQueue operationCount] == 0)
-		[m_communicationOperationQueue addOperation:[[[DDCometClientOperation alloc] initWithClient:self] autorelease]];
-	else
+	if (m_transport == nil)
 	{
-		DDCometClientOperation *operation = [[m_communicationOperationQueue operations] objectAtIndex:0];
-		[operation cancelPolling];
+		m_transport = [[DDCometLongPollingTransport alloc] initWithClient:self];
+		[m_transport start];
 	}
 }
 

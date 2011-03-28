@@ -4,15 +4,16 @@
 
 @class DDCometClient;
 
-@interface DDCometClientOperation : NSOperation
+@interface DDCometLongPollingTransport : NSObject
 {
 @private
 	DDCometClient *m_client;
-	volatile BOOL m_cancelPolling;
-	NSMutableData *m_responseData;
+	volatile BOOL m_shouldCancel;
+	NSMutableDictionary *m_responseDatas;
 }
 
 - (id)initWithClient:(DDCometClient *)client;
-- (void)cancelPolling;
+- (void)start;
+- (void)cancel;
 
 @end

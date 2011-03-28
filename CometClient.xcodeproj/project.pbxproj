@@ -49,8 +49,8 @@
 		46569003132C27BD004086EE /* DDCometMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569001132C27BD004086EE /* DDCometMessage.m */; };
 		4656900A132DA5FF004086EE /* DDCometSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569009132DA5FE004086EE /* DDCometSubscription.m */; };
 		4656900B132DA5FF004086EE /* DDCometSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 46569009132DA5FE004086EE /* DDCometSubscription.m */; };
-		4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
-		4656900F132DD5A6004086EE /* DDCometClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometClientOperation.m */; };
+		4656900E132DD5A6004086EE /* DDCometLongPollingTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometLongPollingTransport.m */; };
+		4656900F132DD5A6004086EE /* DDCometLongPollingTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656900D132DD5A5004086EE /* DDCometLongPollingTransport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,8 +115,8 @@
 		46569001132C27BD004086EE /* DDCometMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometMessage.m; path = DDComet/DDCometMessage.m; sourceTree = "<group>"; };
 		46569008132DA5FE004086EE /* DDCometSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometSubscription.h; path = DDComet/DDCometSubscription.h; sourceTree = "<group>"; };
 		46569009132DA5FE004086EE /* DDCometSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometSubscription.m; path = DDComet/DDCometSubscription.m; sourceTree = "<group>"; };
-		4656900C132DD5A5004086EE /* DDCometClientOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometClientOperation.h; path = DDComet/DDCometClientOperation.h; sourceTree = "<group>"; };
-		4656900D132DD5A5004086EE /* DDCometClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometClientOperation.m; path = DDComet/DDCometClientOperation.m; sourceTree = "<group>"; };
+		4656900C132DD5A5004086EE /* DDCometLongPollingTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometLongPollingTransport.h; path = DDComet/DDCometLongPollingTransport.h; sourceTree = "<group>"; };
+		4656900D132DD5A5004086EE /* DDCometLongPollingTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometLongPollingTransport.m; path = DDComet/DDCometLongPollingTransport.m; sourceTree = "<group>"; };
 		46569010132DDD17004086EE /* DDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDQueue.h; path = DDComet/DDQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,8 +253,8 @@
 				461CD432132F368F00A6BE4F /* DDArrayQueue.m */,
 				46568FFC132C0500004086EE /* DDCometClient.h */,
 				46568FFD132C0500004086EE /* DDCometClient.m */,
-				4656900C132DD5A5004086EE /* DDCometClientOperation.h */,
-				4656900D132DD5A5004086EE /* DDCometClientOperation.m */,
+				4656900C132DD5A5004086EE /* DDCometLongPollingTransport.h */,
+				4656900D132DD5A5004086EE /* DDCometLongPollingTransport.m */,
 				46569000132C27BD004086EE /* DDCometMessage.h */,
 				46569001132C27BD004086EE /* DDCometMessage.m */,
 				46569008132DA5FE004086EE /* DDCometSubscription.h */,
@@ -388,7 +388,7 @@
 				46568FFE132C0500004086EE /* DDCometClient.m in Sources */,
 				46569002132C27BD004086EE /* DDCometMessage.m in Sources */,
 				4656900A132DA5FF004086EE /* DDCometSubscription.m in Sources */,
-				4656900E132DD5A6004086EE /* DDCometClientOperation.m in Sources */,
+				4656900E132DD5A6004086EE /* DDCometLongPollingTransport.m in Sources */,
 				461CD433132F368F00A6BE4F /* DDArrayQueue.m in Sources */,
 				461CD4741333136B00A6BE4F /* DDConcurrentQueue.m in Sources */,
 				460048951335BCDB0015DB79 /* DDQueueProcessor.m in Sources */,
@@ -412,7 +412,7 @@
 				46568FFF132C0500004086EE /* DDCometClient.m in Sources */,
 				46569003132C27BD004086EE /* DDCometMessage.m in Sources */,
 				4656900B132DA5FF004086EE /* DDCometSubscription.m in Sources */,
-				4656900F132DD5A6004086EE /* DDCometClientOperation.m in Sources */,
+				4656900F132DD5A6004086EE /* DDCometLongPollingTransport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
