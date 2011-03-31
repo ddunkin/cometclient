@@ -118,6 +118,8 @@
 		4656900C132DD5A5004086EE /* DDCometLongPollingTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCometLongPollingTransport.h; path = DDComet/DDCometLongPollingTransport.h; sourceTree = "<group>"; };
 		4656900D132DD5A5004086EE /* DDCometLongPollingTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCometLongPollingTransport.m; path = DDComet/DDCometLongPollingTransport.m; sourceTree = "<group>"; };
 		46569010132DDD17004086EE /* DDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDQueue.h; path = DDComet/DDQueue.h; sourceTree = "<group>"; };
+		46AFA52F13443B9900B4DCA4 /* bayeux.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bayeux.html; sourceTree = "<group>"; };
+		46AFA53013443B9900B4DCA4 /* dojo.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = dojo.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		46568F89132C01AC004086EE = {
 			isa = PBXGroup;
 			children = (
+				46AFA52E13443B7900B4DCA4 /* Documentation */,
 				46568FFB132C030B004086EE /* DDComet */,
 				46568FD5132C025A004086EE /* SBJSON */,
 				46568F9E132C01AD004086EE /* CometClient */,
@@ -266,6 +269,15 @@
 				460048941335BCC80015DB79 /* DDQueueProcessor.m */,
 			);
 			name = DDComet;
+			sourceTree = "<group>";
+		};
+		46AFA52E13443B7900B4DCA4 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				46AFA52F13443B9900B4DCA4 /* bayeux.html */,
+				46AFA53013443B9900B4DCA4 /* dojo.js */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
