@@ -58,7 +58,7 @@
 	[m_incomingProcessor scheduleInRunLoop:runLoop forMode:mode];
 }
 
-- (DDCometMessage *)handshake:(NSError **)error
+- (DDCometMessage *)handshake
 {
 	m_state = DDCometStateConnecting;
 	
@@ -70,15 +70,16 @@
 	return message;
 }
 
-- (void)disconnect
+- (DDCometMessage *)disconnect
 {
-	m_state = DDCometStateDisconnected;
-	[m_transport cancel];
-	[m_transport release];
-	m_transport = nil;
+	m_state = DDCometStateDisconnecting;
+	
+	DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/disconnect"];
+	[self sendMessage:message];
+	return message;
 }
 
-- (DDCometMessage *)subscribeToChannel:(NSString *)channel target:(id)target selector:(SEL)selector error:(NSError **)error
+- (DDCometMessage *)subscribeToChannel:(NSString *)channel target:(id)target selector:(SEL)selector
 {
 	DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/subscribe"];
 	message.ID = [self nextMessageID];
@@ -92,7 +93,7 @@
 	return message;
 }
 
-- (DDCometMessage *)unsubsubscribeFromChannel:(NSString *)channel target:(id)target selector:(SEL)selector error:(NSError **)error
+- (DDCometMessage *)unsubsubscribeFromChannel:(NSString *)channel target:(id)target selector:(SEL)selector
 {
 	DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/unsubscribe"];
 	message.ID = [self nextMessageID];
@@ -114,7 +115,7 @@
 	return message;
 }
 
-- (DDCometMessage *)publishData:(id)data toChannel:(NSString *)channel error:(NSError **)error
+- (DDCometMessage *)publishData:(id)data toChannel:(NSString *)channel
 {
 	DDCometMessage *message = [DDCometMessage messageWithChannel:channel];
 	message.data = data;
@@ -167,7 +168,9 @@
 			if ([message.successful boolValue])
 			{
 				m_clientID = [message.clientID retain];
-				m_state = DDCometStateConnected;
+				
+				[self sendMessage:[DDCometMessage messageWithChannel:@"/meta/connect"]];
+				
 				if (m_delegate && [m_delegate respondsToSelector:@selector(cometClientHandshakeDidSucceed:)])
 					[m_delegate cometClientHandshakeDidSucceed:self];
 			}
@@ -191,6 +194,19 @@
 				if (m_delegate && [m_delegate respondsToSelector:@selector(cometClient:connectDidFailWithError:)])
 					[m_delegate cometClient:self connectDidFailWithError:message.error];
 			}
+			else if (m_state == DDCometStateConnecting)
+			{
+				m_state = DDCometStateConnected;
+				if (m_delegate && [m_delegate respondsToSelector:@selector(cometClientConnectDidSucceed:)])
+					[m_delegate cometClientConnectDidSucceed:self];
+			}
+		}
+		else if ([channel isEqualToString:@"/meta/disconnect"])
+		{
+			m_state = DDCometStateDisconnected;
+			[m_transport cancel];
+			[m_transport release];
+			m_transport = nil;
 		}
 		else if ([channel isEqualToString:@"/meta/subscribe"])
 		{

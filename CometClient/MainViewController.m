@@ -22,7 +22,7 @@
 		m_client = [[DDCometClient alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/cometd"]];
 		m_client.delegate = self;
 		[m_client scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-		[m_client handshake:NULL];
+		[m_client handshake];
 	}
 }
 
@@ -41,7 +41,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:m_textField.text, @"chat", @"iPhone user", @"user", nil];
-	[m_client publishData:data toChannel:@"/chat/demo" error:NULL];
+	[m_client publishData:data toChannel:@"/chat/demo"];
 	
 	m_textField.text = @"";
 	return YES;
@@ -57,19 +57,25 @@
 - (void)cometClientHandshakeDidSucceed:(DDCometClient *)client
 {
 	NSLog(@"Handshake succeeded");
-	[self appendText:@"[connected]"];
-	
-	[client subscribeToChannel:@"/chat/demo" target:self selector:@selector(chatMessageReceived:) error:NULL];
-	[client subscribeToChannel:@"/members/demo" target:self selector:@selector(membershipMessageReceived:) error:NULL];
-	
-	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:@"/chat/demo", @"room", @"iPhone user", @"user", nil];
-	[m_client publishData:data toChannel:@"/service/members" error:NULL];
 }
 
 - (void)cometClient:(DDCometClient *)client handshakeDidFailWithError:(NSError *)error
 {
 	NSLog(@"Handshake failed");
 }
+
+- (void)cometClientConnectDidSucceed:(DDCometClient *)client
+{
+	NSLog(@"Connect succeeded");
+	[self appendText:@"[connected]"];
+	
+	[client subscribeToChannel:@"/chat/demo" target:self selector:@selector(chatMessageReceived:)];
+	[client subscribeToChannel:@"/members/demo" target:self selector:@selector(membershipMessageReceived:)];
+	
+	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:@"/chat/demo", @"room", @"iPhone user", @"user", nil];
+	[m_client publishData:data toChannel:@"/service/members"];
+}
+
 
 - (void)cometClient:(DDCometClient *)client connectDidFailWithError:(NSError *)error
 {

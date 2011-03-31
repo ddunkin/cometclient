@@ -13,7 +13,8 @@ typedef enum
 {
 	DDCometStateDisconnected,
 	DDCometStateConnecting,
-	DDCometStateConnected
+	DDCometStateConnected,
+	DDCometStateDisconnecting
 } DDCometState;
 
 @interface DDCometClient : NSObject
@@ -39,11 +40,11 @@ typedef enum
 
 - (id)initWithURL:(NSURL *)endpointURL;
 - (void)scheduleInRunLoop:(NSRunLoop *)runLoop forMode:(NSString *)mode;
-- (DDCometMessage *)handshake:(NSError **)error;
-- (void)disconnect;
-- (DDCometMessage *)subscribeToChannel:(NSString *)channel target:(id)target selector:(SEL)selector error:(NSError **)error;
-- (DDCometMessage *)unsubsubscribeFromChannel:(NSString *)channel target:(id)target selector:(SEL)selector error:(NSError **)error;
-- (DDCometMessage *)publishData:(id)data toChannel:(NSString *)channel error:(NSError **)error;
+- (DDCometMessage *)handshake;
+- (DDCometMessage *)disconnect;
+- (DDCometMessage *)subscribeToChannel:(NSString *)channel target:(id)target selector:(SEL)selector;
+- (DDCometMessage *)unsubsubscribeFromChannel:(NSString *)channel target:(id)target selector:(SEL)selector;
+- (DDCometMessage *)publishData:(id)data toChannel:(NSString *)channel;
 
 @end
 
@@ -58,6 +59,7 @@ typedef enum
 @optional
 - (void)cometClientHandshakeDidSucceed:(DDCometClient *)client;
 - (void)cometClient:(DDCometClient *)client handshakeDidFailWithError:(NSError *)error;
+- (void)cometClientConnectDidSucceed:(DDCometClient *)client;
 - (void)cometClient:(DDCometClient *)client connectDidFailWithError:(NSError *)error;
 - (void)cometClient:(DDCometClient *)client subscriptionDidSucceed:(DDCometSubscription *)subscription;
 - (void)cometClient:(DDCometClient *)client subscription:(DDCometSubscription *)subscription didFailWithError:(NSError *)error;
