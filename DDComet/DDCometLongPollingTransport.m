@@ -48,28 +48,34 @@
 
 - (void)main
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
 	do
 	{
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		NSArray *messages = [self outgoingMessages];
 		
 		BOOL isPolling;
-		if ([messages count] == 0 && m_client.state == DDCometStateConnected)
+		if ([messages count] == 0)
 		{
-			isPolling = YES;
-			DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/connect"];
-			message.clientID = m_client.clientID;
-			message.connectionType = @"long-polling";
-			NSLog(@"Sending long-poll message: %@", message);
-			messages = [NSArray arrayWithObject:message];
+			if (m_client.state == DDCometStateConnected)
+			{
+				isPolling = YES;
+				DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/connect"];
+				message.clientID = m_client.clientID;
+				message.connectionType = @"long-polling";
+				NSLog(@"Sending long-poll message: %@", message);
+				messages = [NSArray arrayWithObject:message];
+			}
+			else
+			{
+				[NSThread sleepForTimeInterval:0.01];
+			}
 		}
 		
 		NSURLConnection *connection = [self sendMessages:messages];
 		if (connection)
 		{
 			NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-			while ([runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]])
+			while ([runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.01]])
 			{
 				if (isPolling)
 				{
@@ -86,9 +92,8 @@
 				}
 			}
 		}
+		[pool release];
 	} while (m_client.state != DDCometStateDisconnected);
-	
-	[pool release];
 }
 
 - (NSURLConnection *)sendMessages:(NSArray *)messages

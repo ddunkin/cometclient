@@ -12,7 +12,9 @@
 
 + (NSDate *)dateWithISO8601String:(NSString *)string
 {
-	return [[[NSDate alloc] init] autorelease];
+	NSDateFormatter *fmt = [[[NSDateFormatter alloc] init] autorelease];
+	[fmt setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+	return [fmt dateFromString:string];
 }
 
 - (NSString *)ISO8601Representation
@@ -35,8 +37,10 @@
 
 + (NSError *)errorWithBayeuxFormat:(NSString *)string
 {
-	NSInteger code = 0;
-	return [[[NSError alloc] initWithDomain:@"" code:code userInfo:[NSDictionary dictionary]] autorelease];
+	NSArray *components = [string componentsSeparatedByString:@":"];
+	NSInteger code = [[components objectAtIndex:0] integerValue];
+	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[components objectAtIndex:2], NSLocalizedDescriptionKey, nil];
+	return [[[NSError alloc] initWithDomain:@"" code:code userInfo:userInfo] autorelease];
 }
 
 - (NSString *)bayeuxFormat

@@ -169,7 +169,9 @@
 			{
 				m_clientID = [message.clientID retain];
 				
-				[self sendMessage:[DDCometMessage messageWithChannel:@"/meta/connect"]];
+				DDCometMessage *connectMessage = [DDCometMessage messageWithChannel:@"/meta/connect"];
+				connectMessage.connectionType = @"long-polling";
+				[self sendMessage:connectMessage];
 				
 				if (m_delegate && [m_delegate respondsToSelector:@selector(cometClientHandshakeDidSucceed:)])
 					[m_delegate cometClientHandshakeDidSucceed:self];
@@ -244,7 +246,7 @@
 		{
 			for (DDCometSubscription *subscription in m_subscriptions)
 			{
-				if ([channel isEqualToString:subscription.channel]) // TODO: handle wildcards
+				if ([subscription matchesChannel:message.channel])
 					[subscriptions addObject:subscription];
 			}
 		}

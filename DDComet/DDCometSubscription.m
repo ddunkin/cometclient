@@ -25,4 +25,23 @@
 	[super dealloc];
 }
 
+- (BOOL)matchesChannel:(NSString *)channel
+{
+	if ([m_channel isEqualToString:channel])
+		return YES;
+	if ([m_channel hasSuffix:@"/**"])
+	{
+		NSString *prefix = [m_channel substringToIndex:([m_channel length] - 2)];
+		if ([channel hasPrefix:prefix])
+			return YES;
+	}
+	else if ([m_channel hasSuffix:@"/*"])
+	{
+		NSString *prefix = [m_channel substringToIndex:([m_channel length] - 1)];
+		if ([channel hasPrefix:prefix] && [[channel substringFromIndex:([m_channel length] - 1)] rangeOfString:@"*"].location == NSNotFound)
+			return YES;
+	}
+	return NO;
+}
+
 @end
