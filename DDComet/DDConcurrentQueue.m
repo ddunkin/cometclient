@@ -87,8 +87,10 @@
 			}
 		}
 	}
-	if (m_delegate)
+	if (m_delegate) {
 		[m_delegate queueDidAddObject:self];
+    }
+    [node release];
 }
 
 - (id)removeObject
